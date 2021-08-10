@@ -35,6 +35,19 @@ b. [AlexNet](https://en.wikipedia.org/wiki/AlexNet) - While not the first GPU-im
 
 While the initial glance at the losses are very promising, further inspection shows similar lackluster results as DenseNet with respect to overfitting the training set. We do see the validation and training loss converging to a similar scale, which overtakes DenseNet as the best candidate so far.
 
-c. Mobilenet
+c. [MobileNet](https://arxiv.org/abs/1704.04861) - This model was proposed as a way to implement bulky CNN architecture onto lightweight mobile applications. It does so by introducing hyperparameters to the model which trades off accuracy for computability. For the purposes of this experiment, we have opted to take advantage of the less bulky model to see how it compares to the bigger architectures shown previously:
 
-d. Resnet
+![MOBILENET](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/mobilenetloss.png)
+
+Initial inspection of this model actually shows it performing quite well in terms of closing the loss gap as well as showing a variation in learning as the last layer's parameters are tweaked for the cancerous cells. This gives us hope that looking at the accuracy will give us an ideal model to work with for this project.
+
+![MOBILENET](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/mobilenetacc.png)
+
+It looks like we've been duped again! As can be seen above, the validation accuracy is incredibly low, despite the training set reaching pretty high accuracy levels.
+
+
+d. [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network) - Drawing influence from the antomical structure of pyramidal cells in the cerebral cortex, ResNets make use of skip connections to feed information from previous layers to future layers. This can be likened to the DenseNet structure, though the layers are fed forward in a more sparse manner. This creates a happy medium between information retention and computation time, which can also be seen as a form a regularization of our system.
+
+![RESNET_LOSS](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/resnetloss.png)
+![RESNET_ACC](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/resnetaccs.png)
+
