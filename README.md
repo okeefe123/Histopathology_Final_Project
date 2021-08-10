@@ -25,11 +25,12 @@ The first task in the journey to an optimal model is selecting the most appropri
 
 a. DenseNet - Created to remedy the vanishing/exploding gradient problem of deep neural networks, this architecture seeks to retain information that might otherwise be lost to backpropogation when tweaking the parameters in the layers. It relies on concatenating the output of previous layers with future ones, of which presents the downside of being computationally expensive.
 
-[DENSENET IMAGE HERE!!!!]
+![DENSENET](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/densenetloss.png)
 
+While densenet may be suitable for many purposes, we see that in this case it's increasingly overfitting as the gap widens between the training and validation loss. Not shown is the accuracy, which relayed an impressive 0.8 for the training set but an abysmal 0.02 for validation. While this overfitting can be dealt with through regularization techniques, it may be best to survey the others before making that leap.
 
-b. Alexnet
+b. Alexnet - 
 
-c. Densenet
+c. Mobilenet
 
 d. Resnet
