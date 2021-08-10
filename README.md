@@ -51,3 +51,4 @@ d. [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network) - Drawing inf
 ![RESNET_LOSS](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/resnetloss.png)
 ![RESNET_ACC](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/resnetaccs.png)
 
+With a promising close in the gaps appearing in the losses and a gradual improvement of validation accuracy as the number epochs increases, we conclude that ResNet holds the best prospects of providing an accurate classifier once trained and fine-tuned.
