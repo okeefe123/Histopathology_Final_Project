@@ -65,3 +65,14 @@ With a promising close in the gaps appearing in the losses and a gradual improve
 
 Model Architecture
 ====
+
+Because the goal here is to accurately identify cancer in an image, we want to investigate two strategies with our pretrained model.
+
+Strategy 1:
+----
+Using the whole entire dataset, we want to investigate whether or not cancerous cells exist in the image regardless of if the image is that of the lung or the colon. This translates to a single binary classification model whose results are shown below:
+
+![Single Model Accuracy](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/cancer_identification_accuracy.png)
+
+This shows very promising initial results, as the accuracy for the training set continually improves while validation accuracy actually surpasses at the sixth epoch. There is good reason to believe that this may be the best way to address our question, but let's take a look at the second strategy before continuing forward.
+
