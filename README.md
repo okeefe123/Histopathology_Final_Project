@@ -105,3 +105,5 @@ With all of the above techniques applied to the neural network, the following re
 
 
 Looking back on the fine tuning principles, data augmentation seemed to help the most, which aligns with the general notion that a model can only do as well as the data provided. Unfreezing the gradients too quickly tended to result in extreme overfitting and ruined the gains that training made in the validation error, making that a finicky aspect to fine tune. While the adjusted learning rate did knock the loss function out of saddle points, it overall had a negligible effect on the outcome of the model.
+
+With all that in mind, sometimes it is better to just rely on the best pretrained model and simplify the task to the most general classification problems. This project was a great look into the finicky nature of deep learning models and how much work it takes to find the ideal location in loss hyperspace.
