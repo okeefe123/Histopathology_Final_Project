@@ -83,7 +83,7 @@ Despite the promising results, it may be more worthwhile to train one binary cla
 
 [INSERT DUAL MODEL ACCURACY HERE!]
 
-[INSERT ANALYSIS OF THE MODEL ACCURACIES HERE]
+While the classification model for lung cancer performs exceptionally well, the model for colon cancer was unable to overcome the baseline of random choice. This is the red flag that ultimately led us to choosing the single model strategy moving forward.
 
 
 Fine Tuning
@@ -101,8 +101,8 @@ Conclusion
 ====
 With all of the above techniques applied to the neural network, the following results were found:
 
-![LOSS GRAPH](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/cancer_id_ft_loss.png)
-![ACC GRAPH](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/cancer_id_ft_acc.png)
+
+![ACC GRAPH](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/cancer_identification_accuracy_ft2.pngv)
 
 
 Looking back on the fine tuning principles, data augmentation seemed to help the most, which aligns with the general notion that a model can only do as well as the data provided. Unfreezing the gradients too quickly tended to result in extreme overfitting and ruined the gains that training made in the validation error, making that a finicky aspect to fine tune. While the adjusted learning rate did knock the loss function out of saddle points, it overall had a negligible effect on the outcome of the model.
