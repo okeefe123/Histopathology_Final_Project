@@ -76,3 +76,31 @@ Using the whole entire dataset, we want to investigate whether or not cancerous 
 
 This shows very promising initial results, as the accuracy for the training set continually improves while validation accuracy actually surpasses at the sixth epoch. There is good reason to believe that this may be the best way to address our question, but let's take a look at the second strategy before continuing forward.
 
+
+Strategy 2:
+----
+Despite the promising results, it may be more worthwhile to train one binary classifier on colon cancer and another binary classifier on lung cancer. When this is done, the following results are achieved:
+
+[INSERT DUAL MODEL ACCURACY HERE!]
+
+[INSERT ANALYSIS OF THE MODEL ACCURACIES HERE]
+
+
+Fine Tuning
+====
+
+With the pretrained model decided and the most effective model architecture chosen, we will finally fine tune hyperparameters and take into consideration some of the regularization constraints to make the model ideal.
+
+1. Data Augmentation - Before tweaking the parameters/hyperparameters themselves, it's a good idea to first tweak the images with augmentation methods before feeding them into the model for training. By inheriting from the Dataset class, we implemented physical transformations such as rotation and reflection, random cropping, saturation, and fuzziness to the images as they were passed along in each epoch. The goal here is to generate new data which the computer sees as novel. This also introduces a meta-geometric aspect that the model can learn in addition to the contents within the image.
+2. Adjusted Learning Rate - Instead of relying on a single learning rate, we use Triangular Rates via the cosine function to fluctuate the data. In addition, the learning rate is scaled such that it's extremely small for earlier layers which may not benefit from anything other than the most minute parameter changes.
+3. Unfreezing Gradients - As the number of epochs increase, it could be a good idea to unfreeze pretrained layers so that they are free to (minutely) change when the later layers lock into the ideal values.
+4. Weight Decay - Applying L2 regularization in the optimizer could be an easy and elegant way to generalize the Neural Network to the validation set.
+5. Early Stopping - When the number of epochs begin to detrimentally affect the accuracy of our model, stop training (or in our case, select the saved model with the best validation accuracy throughout epochs).
+
+Conclusion
+====
+With all of the above techniques applied to the neural network, the following results were found:
+
+[LOSS/ACCURACY GRAPHS]
+
+
