@@ -81,7 +81,8 @@ Strategy 2:
 ----
 Despite the promising results, it may be more worthwhile to train one binary classifier on colon cancer and another binary classifier on lung cancer. When this is done, the following results are achieved:
 
-[INSERT DUAL MODEL ACCURACY HERE!]
+![Lung Accuracy](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/lung_cancer_acc.png)
+![Colon Accuracy](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/colon_cancer_acc.png)
 
 While the classification model for lung cancer performs exceptionally well, the model for colon cancer was unable to overcome the baseline of random choice. This is the red flag that ultimately led us to choosing the single model strategy moving forward.
 
@@ -102,9 +103,10 @@ Conclusion
 With all of the above techniques applied to the neural network, the following results were found:
 
 
-![ACC GRAPH](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/cancer_identification_accuracy_ft2.pngv)
+![ACC GRAPH](https://github.com/okeefe123/Histopathology_Final_Project/blob/main/figures/cancer_identification_accuracy_ft2.png)
 
+The gradient of a single pretrained layer was unfrozen every 5 epochs, in addition to the magnitude of the triangular learning rate being reduced by a factor of 10.
 
 Looking back on the fine tuning principles, data augmentation seemed to help the most, which aligns with the general notion that a model can only do as well as the data provided. Unfreezing the gradients too quickly tended to result in extreme overfitting and ruined the gains that training made in the validation error, making that a finicky aspect to fine tune. While the adjusted learning rate did knock the loss function out of saddle points, it overall had a negligible effect on the outcome of the model.
 
-With all that in mind, sometimes it is better to just rely on the best pretrained model and simplify the task to the most general classification problems. This project was a great look into the finicky nature of deep learning models and how much work it takes to find the ideal location in loss hyperspace.
+With everythin in mind, sometimes it is better to just rely on the best pretrained model and simplify the task to the most general classification problems. This project was a great look into the finicky nature of deep learning models and how much work it takes to find the ideal location in loss hyperspace.
