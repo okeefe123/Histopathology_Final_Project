@@ -104,3 +104,4 @@ With all of the above techniques applied to the neural network, the following re
 [LOSS/ACCURACY GRAPHS]
 
 
+Looking back on the fine tuning principles, data augmentation seemed to help the most, which aligns with the general notion that a model can only do as well as the data provided. Unfreezing the gradients too quickly tended to result in extreme overfitting and ruined the gains that training made in the validation error, making that a finicky aspect to fine tune. While the adjusted learning rate did knock the loss function out of saddle points, it overall had a negligible effect on the outcome of the model.
