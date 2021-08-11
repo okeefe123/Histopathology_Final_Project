@@ -7,7 +7,8 @@ In this project, the [Histopathologic Data Set](https://www.kaggle.com/c/histopa
 Background
 ====
 
-[Efrem will include background here]
+Histopathology refers to the microscopic examination of tissue in order to study the manifestations of disease. Pathologists read microscopic slides to diagnose cancers. Here we got datasets including slides for colon cancer, normal colon tissue, normal lung tissue, squamous cell carcinoma, and adeno-carcinoma of the lungs. 
+
 
 
 Goals
